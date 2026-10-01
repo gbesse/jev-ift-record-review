@@ -1,0 +1,52 @@
+{
+  "name": "@gbesse/jev-ift-record-review",
+  "version": "0.1.0",
+  "description": "Prépare un enregistrement phytopharmaceutique avant son calcul officiel d’IFT.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.d.mts",
+      "import": "./src/index.mjs"
+    },
+    "./jev": {
+      "types": "./src/jev.d.mts",
+      "import": "./src/jev.mjs"
+    }
+  },
+  "bin": {
+    "jev-ift-record-review": "./bin/jev-ift-record-review.mjs"
+  },
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "typecheck": "tsc --noEmit --strict --target ES2022 --module NodeNext docs/public-api-types.mts",
+    "test": "node --test",
+    "demo": "node examples/demo.mjs && node examples/cas-limite.mjs && node examples/revue-humaine.mjs",
+    "demo:principal": "node examples/demo.mjs",
+    "demo:limite": "node examples/cas-limite.mjs",
+    "demo:revue": "node examples/revue-humaine.mjs"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gbesse/jev-ift-record-review.git"
+  },
+  "keywords": [
+    "jev",
+    "typesafe-ai",
+    "france",
+    "open-data"
+  ],
+  "files": [
+    "src",
+    "bin",
+    "docs",
+    "examples",
+    "scripts"
+  ]
+}
